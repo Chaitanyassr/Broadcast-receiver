@@ -15,6 +15,7 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -42,6 +43,9 @@ public class MainActivity extends AppCompatActivity {
             }else if (receivedType.startsWith("image/")){
                 txtView.setVisibility(View.GONE);
                 Uri receivedUri = (Uri) receivedIntent.getParcelableExtra(Intent.EXTRA_STREAM);
+                if (receivedAction.equals(Intent.ACTION_MAIN)){
+                    Toast.makeText(this, "", Toast.LENGTH_SHORT).show();
+                }
                 
             }
         }
